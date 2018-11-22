@@ -31,6 +31,9 @@
     - `EntityId` is now in the `Improbable.Gdk.Core` namespace. (Previously `Improbable.Worker`).
     - `Dispatcher` is now in the `Improbable.Gdk.Core` namespace. (Previously `Improbable.Worker`).
     - The `Improbable.Worker.Core` namespace is now `Improbable.Worker.CInterop`.
+- `Improbable.Gdk.EntityTemplate` is now mutable and exposes a set of APIs to add, remove, and replace component snapshots
+    - This replaces the `Improbable.Gdk.Core.EntityBuilder` class.
+    - These changes also allow you to reuse an `EntityTemplate` more than once.
 
 ### Fixed
 
@@ -39,6 +42,8 @@
 ### Removed
 
 - Removed the `StandardLibraryUtils` feature module as it was superceded by inserting the methods during code generation.
+- Removed the `Improbable.Gdk.Core.EntityBuilder` class as it was superceded by the updated functionality in `Improbable.Gdk.Core.EntityTemplate`.
+    - Removed `CreateSchemaComponentData` from each generated component as it is no longer required by the `EntityBuilder`.
 
 ## `0.1.2` - 2018-11-01
 
